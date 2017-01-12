@@ -20,7 +20,7 @@ client.on('connect', function () {
 	
 		console.log("Client Status: \u001B[36mWAITING\u001B[0m");
 	
-		server.on('message' , function(topic , message , packet){
+		client.on('message' , function(topic , message , packet){
 
 			console.log("Mensaje on " + topic + ": " + message);
 
