@@ -1,0 +1,11 @@
+{
+  "name": "asdf.js",
+  "version": "0.0.1",
+  "description": "Hola mundo de nodeJs :D",
+  "main": "asdf.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Fabian Montero",
+  "license": "ISC"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "mqttServer.js",
+  "version": "0.0.1",
+  "description": "MQTT Server",
+  "main": "mqttServer.js",
+  "scripts": {
+    "test": "mqttTest"
+  },
+  "author": "Fabian Montero",
+  "license": "ISC"
+}
