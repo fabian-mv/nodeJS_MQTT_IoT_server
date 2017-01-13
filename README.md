@@ -1,4 +1,4 @@
-# imagine_IoT_server
+# nodeJS_MQTT_IoT_server
 
 ### Stuff used to make this:
 
