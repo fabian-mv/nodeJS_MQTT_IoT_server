@@ -1,6 +1,7 @@
 const mqtt = require('mqtt');
 
-var broker = 'mqtt://0.0.0.0';
+var broker = 'mqtt://broker.mqtt-dashboard.com/';
+//var broker = 'mqtt://localhost:1883';
 
 console.log("iMA6iNE IoT Server Status: \u001B[31mOFFLINE\u001B[0m\nBooting...");
 
@@ -16,7 +17,7 @@ server.on('connect' , function(){
 	
 	server.subscribe('server/status' , function(){
 	
-		console.log("iMA6iNE IoT Server Status: \u001B[36mWAITING\u001B[0m");
+		console.log("iMA6iNE IoT Server Status: \u001B[36mWAITING\u001B[0m on topic server/status");
 	
 		server.on('message' , function(topic , message , packet){
 
