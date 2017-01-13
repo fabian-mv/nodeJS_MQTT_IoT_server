@@ -1,6 +1,6 @@
 const mqtt = require('mqtt');
 
-var broker = 'mqtt://broker.mqttdashboard.com';
+var broker = 'mqtt://0.0.0.0';
 
 console.log("iMA6iNE IoT Server Status: \u001B[31mOFFLINE\u001B[0m\nBooting...");
 
