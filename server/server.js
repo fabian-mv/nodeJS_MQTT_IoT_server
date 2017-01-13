@@ -6,7 +6,7 @@ console.log("iMA6iNE IoT Server Status: \u001B[31mOFFLINE\u001B[0m\nBooting...")
 
 const server = mqtt.connect(broker);
 
-console.log("Conected to Broker: " + broker);
+console.log("Connected to Broker: " + broker);
 
 server.on('connect' , function(){
 

@@ -1,0 +1,7 @@
+OPEN CONFIG EXAMPLE
+sudo gunzip -c mosquitto.conf.gz
+
+
+START MOSQUITTO SERVER
+sudo /etc/init.d/mosquitto start
+

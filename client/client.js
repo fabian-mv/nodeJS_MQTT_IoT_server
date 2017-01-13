@@ -6,7 +6,7 @@ console.log("Client Status: \u001B[31mOFFLINE\u001B[0m\nBooting...");
 
 var client  = mqtt.connect(broker);
 
-console.log("Conected to Broker: " + broker);
+console.log("Connected to Broker: " + broker);
 
 
 client.on('connect', function () {
