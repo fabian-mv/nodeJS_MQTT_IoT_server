@@ -14,7 +14,7 @@ console.log("Connected to Broker: " + '\u001B[33m' + broker + '\u001B[0m');
 
 server.on('connect' , function(){
 
-	server.publish('imaginexyz/server/status' , config.serverName + ' Server Status: ONLINE');
+	server.publish('imaginexyz/iotserver/status' , config.serverName + ' Server Status: ONLINE');
 
 	console.log(config.serverName + ' Server Status: \u001B[32mONLINE\u001B[0m');
 	
@@ -26,12 +26,17 @@ server.on('connect' , function(){
 
 			console.log("Message on \u001B[36m" + topic + "\u001B[0m: " + message);
 			
+			database.updateMessageLog(topic , message , packet);
+			
 
 		});
 		
 	});
 	
 });
+
+
+
 
 
 

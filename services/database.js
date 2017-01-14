@@ -1,16 +1,43 @@
 var mongo = require('mongodb');
-var db;
+var iotdb;
 
 
-mongo.MongoClient.connect('mongodb://localhost:27017/iot' , function(err , database) {
+
+mongo.MongoClient.connect('mongodb://localhost:27017/iotdb' , function(err , database) {
     if(!err) {
-        db = database; //Instancia de la base de datos
+        iotdb = database; //Instancia de la base de datos
         
-        console.log('.\n.\n.\n.\n"iot" Database Status: \u001B[32mACTIVE\u001B[0m \n');
+        console.log('.\n.\n.\n.\n"iotdb" Database Status: \u001B[32mACTIVE\u001B[0m \n');
+        
     }
     else{
-        console.log(404, '\u001B[31mError Connecting to the "iot" database\u001B[0m');
+        console.log('\u001B[31mError Connecting to the "iotdb" database\u001B[0m');
     }
 });
+
+
+
+//ANIADE UN MENSAJE AL MESSAGELOG
+exports.updateMessageLog = function(topic , message , packet){
+
+	try{
+		var cleanMsg = JSON.parse(message);
+	}
+	catch(e)
+	{
+	  	var cleanMsg = ''+message;
+	}
+	
+	iotdb.collection('messages').insertOne({
+	
+		TOPIC : topic ,
+		MESSAGE : cleanMsg ,
+		PACKET : packet
+		
+	});
+}
+
+
+
 
 
