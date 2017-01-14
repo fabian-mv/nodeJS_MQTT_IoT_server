@@ -1,5 +1,7 @@
 START MOSQUITTO SERVER
 sudo /etc/init.d/mosquitto start
 
+pi@raspberrypi:/etc/apt/sources.list.d $ mosquitto -p 1883
+
 
 test

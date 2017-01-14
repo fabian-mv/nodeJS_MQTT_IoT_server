@@ -1,30 +1,25 @@
 const mqtt = require('mqtt');
+var config = require('./config.json');
 
-var broker = 'mqtt://m12.cloudmqtt.com';
+var broker = config.broker + ':' + config.port;
 
-console.log("iMA6iNE IoT Server Status: \u001B[31mOFFLINE\u001B[0m\nBooting...");
-
-const userMQTT = "oiroamoi";
-const passwordMQTT = "J3wsSmC4kV9O";
-
-var server = mqtt.connect("mqtt://m12.cloudmqtt.com", { //Cliente MQTT
-  username: userMQTT,
-  password: passwordMQTT,
-  port: 14619
-});
+console.log(config.serverName + " Server Status: \u001B[41mOFFLINE\u001B[0m\nBooting...");
 
 
-console.log("Connected to Broker: " + broker);
+var server = mqtt.connect(broker);
+
+
+console.log("Connected to Broker: " + '\u001B[33m' + broker + '\u001B[0m');
 
 server.on('connect' , function(){
 
-	server.publish('imaginexyz/listen' , 'iMA6iNE IoT Server Status: ONLINE');
+	server.publish('imaginexyz/listen' , config.serverName + ' Server Status: ONLINE');
 	
-	console.log("iMA6iNE IoT Server Status: \u001B[32mONLINE\u001B[0m");
+	console.log(config.serverName + ' Server Status: \u001B[42mONLINE\u001B[0m');
 	
 	server.subscribe('imaginexyz/listen' , function(){
 	
-		console.log("iMA6iNE IoT Server Status: \u001B[36mWAITING\u001B[0m on topic imaginexyz/listen");
+		console.log(config.serverName + ' Server Status: \u001B[44mWAITING\u001B[0m on topic \u001B[533mimaginexyz/listen\u001B[0m');
 	
 		server.on('message' , function(topic , message , packet){
 

@@ -1,2 +1,0 @@
-exports.serverName = "asdfasdf"
-exports.broker = 'mqtt://0.0.0.0'
