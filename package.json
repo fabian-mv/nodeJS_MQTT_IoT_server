@@ -7,6 +7,8 @@
     "test": "mqttTest"
   },
   "author": "Fabian Montero",
-  "license": "ISC"
-  "dependencies": "mongodb": "*"
+  "license": "ISC" ,
+  "dependencies" : {
+  	"mongodb": "*"
+  	}
 }
