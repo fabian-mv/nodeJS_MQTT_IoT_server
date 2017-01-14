@@ -1,17 +1,13 @@
 const mqtt = require('mqtt');
 
-var broker = 'mqtt://m12.cloudmqtt.com';
+var broker = 'mqtt://192.168.1.107:1883';
 
 console.log("iMA6iNE IoT Server Status: \u001B[31mOFFLINE\u001B[0m\nBooting...");
 
 const userMQTT = "oiroamoi";
 const passwordMQTT = "J3wsSmC4kV9O";
 
-var server = mqtt.connect("mqtt://m12.cloudmqtt.com", { //Cliente MQTT
-  username: userMQTT,
-  password: passwordMQTT,
-  port: 14619
-});
+var server = mqtt.connect(broker);
 
 
 console.log("Connected to Broker: " + broker);
@@ -35,6 +31,4 @@ server.on('connect' , function(){
 	});
 	
 });
-
-
 
