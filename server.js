@@ -1,5 +1,6 @@
-const mqtt = require('mqtt');
+var mqtt = require('mqtt');
 var config = require('./config.json');
+//var database = require('./services/database');
 
 var broker = config.broker + ':' + config.port;
 
@@ -13,17 +14,18 @@ console.log("Connected to Broker: " + '\u001B[33m' + broker + '\u001B[0m');
 
 server.on('connect' , function(){
 
-	server.publish('imaginexyz/listen' , config.serverName + ' Server Status: ONLINE');
-	
+	server.publish('imaginexyz/server/status' , config.serverName + ' Server Status: ONLINE');
+
 	console.log(config.serverName + ' Server Status: \u001B[42mONLINE\u001B[0m');
 	
-	server.subscribe('imaginexyz/listen' , function(){
+	server.subscribe('#' , function(){
 	
-		console.log(config.serverName + ' Server Status: \u001B[44mWAITING\u001B[0m on topic \u001B[533mimaginexyz/listen\u001B[0m');
+		console.log(config.serverName + ' Server Status: \u001B[44mWAITING\u001B[0m on all topics (\u001B[33m#\u001B[0m)');
 	
 		server.on('message' , function(topic , message , packet){
 
-			console.log("Mensaje on " + topic + ": " + message);
+			console.log("Message on \u001B[36m" + topic + "\u001B[0m: " + message);
+			
 
 		});
 		

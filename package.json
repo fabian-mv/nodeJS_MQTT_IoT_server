@@ -8,4 +8,5 @@
   },
   "author": "Fabian Montero",
   "license": "ISC"
+  "dependencies": "mongodb": "*"
 }

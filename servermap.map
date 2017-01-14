@@ -6,6 +6,8 @@ server
 │     └─listen
 │
 └─boton
-     └─listen
-     │
-     └─send
+│    └─listen
+│    │
+│    └─send
+│
+└─status
