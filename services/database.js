@@ -35,6 +35,9 @@ exports.updateMessageLog = function(topic , message , packet){
 		PACKET : packet
 		
 	});
+	
+	console.log('Message stored in database at: iotdb.messages\n' + packet);
+
 }
 
 
