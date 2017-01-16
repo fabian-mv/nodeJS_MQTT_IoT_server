@@ -1,17 +1,17 @@
 imaginexyz
 │
 │
-└iotserver
+├iotserver
 │    │
-│    └─────────────dwarf
+│    ├─────────────dwarf
 │    │               │
-│    │               └─ring
-│    │               │
-│    │               │
-│    │               └─open
+│    │               ├─ring
 │    │               │
 │    │               │
-│    │               └─pic
+│    │               ├─open
+│    │               │
+│    │               │
+│    │               ├─pic
 │    │               │
 │    │               │
 │    │               └─opened
@@ -21,3 +21,7 @@ imaginexyz
 │
 │
 listen
+
+
+
+https://en.wikipedia.org/wiki/Box-drawing_character
