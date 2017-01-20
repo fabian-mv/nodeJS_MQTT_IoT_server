@@ -37,7 +37,7 @@ server.on('connect' , function(){
 
 	console.log(config.serverName + ' Server Status: \u001B[32mONLINE\u001B[0m');		//si logra publicar en el topic de status, imprime que el servidor esta en linea
 	
-	server.subscribe('#' , function(){
+	server.subscribe('#' , function(){		//se subscribe a todos los topics
 	
 		console.log(config.serverName + ' Server Status: \u001B[34mWAITING\u001B[0m on all topics (\u001B[33m#\u001B[0m)');			//imprime que esta esperando mensajes en el servidor
 	

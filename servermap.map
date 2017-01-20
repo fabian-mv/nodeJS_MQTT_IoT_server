@@ -8,18 +8,42 @@ imaginexyz
 │    │               ├─ring
 │    │               │
 │    │               │
-│    │               ├─open
+│    │               ├─entrance_execute
 │    │               │
 │    │               │
-│    │               ├─pic
+│    │               ├─entrance_camera
 │    │               │
 │    │               │
-│    │               └─opened
+│    │               └─entrance_status
 │    │
 │    └─status
 │
 │
 │
 listen
+
+
+
+RING
+    100: suena el timbre (señal en boton del timbre)
+
+ENTRANCE_EXECUTE:
+    110: abra el porton (manda orden para que se abra la porton)
+    111: abra la puerta (manda orden para que se abra la puerta)
+
+ENTRANCE_STATUS
+    120: porton abierto (contacto magnetico despegado)
+    121: puerta abierta (contacto magnetico despegado)
+    122: porton cerrado (contacto magnetico pegado)
+    123: puerta cerrada (contacto magnetico pegado)
+
+ENTRANCE_CAMERA
+    130: publique esta foto
+    
+
+
+
+
+
 
 https://en.wikipedia.org/wiki/Box-drawing_character
