@@ -16,14 +16,15 @@
 */
 
 
-
 var mqtt = require('mqtt');							//importa mqtt
 var config = require('./config.json');				//carga la configuracion de ./config.json
 var database = require('./services/database');		//importa las funciones de la base de datos
 
 var broker = config.broker + ':' + config.port;		//declara el broker usando la informacion del archivo de informacion
 
-console.log(config.serverName + " Server Status: \u001B[31mOFFLINE\u001B[0m\nBooting...");		//imprime que el servidor esta fuera de linea
+console.log("IoT Server Version: " + config.version)
+
+console.log(config.serverName + "[ \u001B[31mServer Offline\u001B[0m ]\nBooting...");		//imprime que el servidor esta fuera de linea
 
 
 var server = mqtt.connect(broker);		//intenta conectarse al broker
@@ -33,13 +34,13 @@ console.log("Connected to Broker: " + '\u001B[33m' + broker + '\u001B[0m');		//s
 
 server.on('connect' , function(){
 
-	server.publish('imaginexyz/iotserver/status' , config.serverName + ' Server Status: ONLINE');		//publica en el topic de status que esta en linea
+	server.publish(config.statusTopic , config.serverName + ' Server Status: ONLINE');		//publica en el topic de status que esta en linea
 
-	console.log(config.serverName + ' Server Status: \u001B[32mONLINE\u001B[0m');		//si logra publicar en el topic de status, imprime que el servidor esta en linea
+	console.log(config.serverName + '[ \u001B[32mServer Online\u001B[0m ]');		//si logra publicar en el topic de status, imprime que el servidor esta en linea
 	
 	server.subscribe('#' , function(){		//se subscribe a todos los topics
 	
-		console.log(config.serverName + ' Server Status: \u001B[34mWAITING\u001B[0m on all topics (\u001B[33m#\u001B[0m)');			//imprime que esta esperando mensajes en el servidor
+		console.log(config.serverName + '[ \u001B[34mServer Waiting on:\u001B[0m -all topics- (\u001B[33m#\u001B[0m) ]');			//imprime que esta esperando mensajes en el servidor
 	
 		server.on('message' , function(topic , message , packet){		//lo que pasa si llega un mensaje
 

@@ -1,0 +1,18 @@
+{
+
+"version" : "1.0.1" ,
+
+//Server Settings
+"serverName" : "iMA6iNE IoT" ,
+"broker" : "mqtt://192.168.1.98" ,
+"port" : "1883" ,
+"brokerUser" : "" ,
+"brokerPass" : "" ,
+"statusTopic" : "imaginexyz/iotserver/status" ,
+
+
+//Database Settings
+"databaseName" : "iotdb" ,
+"messagesCollection" : "iotdb.messages"
+
+}
