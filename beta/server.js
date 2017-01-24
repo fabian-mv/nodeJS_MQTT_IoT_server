@@ -22,7 +22,7 @@ var database = require('./services/database');		//importa las funciones de la ba
 
 var broker = config.broker + ':' + config.port;		//declara el broker usando la informacion del archivo de informacion
 
-console.log("IoT Server Version: " + config.version)
+console.log("IoT Server Version: " + config.version);
 
 console.log(config.serverName + "[ \u001B[31mServer Offline\u001B[0m ]\nBooting...");		//imprime que el servidor esta fuera de linea
 
