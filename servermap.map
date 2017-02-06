@@ -3,6 +3,7 @@ imaginexyz
 │
 ├iotserver
 │    │
+│    │
 │    ├─────────────dwarf
 │    │               │
 │    │               ├─ring
@@ -35,8 +36,7 @@ ENTRANCE_STATUS
     120: porton abierto (contacto magnetico despegado)
     121: puerta abierta (contacto magnetico despegado)
     122: porton cerrado (contacto magnetico pegado)
-    123: puerta cerrada (contacto magnetico pegado)
-
+    123: puerta cerrada (contacto magnetico pegado)i
 ENTRANCE_CAMERA
     130: publique esta foto
     
